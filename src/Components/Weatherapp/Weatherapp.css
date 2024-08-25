@@ -208,8 +208,6 @@
     font-weight: bold;
 }
 
-
-
 .switch {
     position: relative;
     display: inline-block;
@@ -369,6 +367,26 @@ input:checked + .slider:before {
         width: 80%;
         margin-bottom: 10px;
     }
+
+    .data_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .element {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .wind_direction, .humidity, .wind_rate {
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--white);
+        margin-top: 5px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -404,15 +422,14 @@ input:checked + .slider:before {
         font-size: 18px;
     }
 
-    .wind_direction {
+    .wind_direction, .humidity, .wind_rate {
+        /* Centering wind direction, humidity, and wind speed */
+        text-align: center;
+        width: 100%;
         font-size: 18px;
         font-weight: bold;
         color: var(--white);
         margin-top: 5px;
-    }
-
-    .humidity {
-        font-weight: bold;
     }
 
     .forecast {
@@ -425,10 +442,17 @@ input:checked + .slider:before {
     }
 
     .data_container {
+        /* Center content for mobile */
         flex-direction: column;
+        align-items: center;
     }
 
     .element {
+        /* Align elements to center and provide spacing */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
         margin-bottom: 15px;
     }
 
