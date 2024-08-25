@@ -1,0 +1,463 @@
+/* Root Variables for Global Styling */
+:root {
+    --primary-color: #130754; /* Dark blue used as the primary color in the gradient */
+    --secondary-color: #3b2f80; /* Lighter purple used as the secondary color in the gradient */
+    --highlight-color: #d0f9f5; /* Light cyan used for hover effects */
+    --input-background: #ebfffc; /* Light greenish color for input fields */
+    --input-focus-background: #d0f9f5; /* Background color for input fields when focused */
+    --text-color: #333; /* General text color (dark gray) */
+    --white: #fff; /* White color used for text and backgrounds */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Default shadow for elements */
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    --transition-duration: 0.3s; /* Standard transition duration for animations */
+}
+
+.container {
+    /* Main container styling */
+    width: 1000px;
+    margin: auto;
+    margin-top: 75px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.top_bar {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding-top: 60px;
+}
+
+.top_bar input {
+    /* Input styling within top bar */
+    width: 350px;
+    height: 50px;
+    background: var(--input-background);
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding-left: 20px;
+    color: #626262;
+    font-size: 18px;
+    font-weight: 400;
+    transition: background var(--transition-duration);
+}
+
+.top_bar input:focus {
+    background: var(--input-focus-background);
+}
+
+.search_icon {
+    /* Search icon button styling */
+    width: 50px;
+    height: 50px;
+    background: var(--input-background);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background var(--transition-duration);
+}
+
+.search_icon:hover {
+    background: var(--input-focus-background);
+}
+
+.error_message {
+    /* Error message styling */
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.loading_message {
+    /* Loading message styling */
+    color: var(--white);
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.weather_image {
+    /* Centering the weather image */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.weather_temp {
+    /* Weather temperature display styling */
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-size: 100px;
+    font-weight: 500;
+}
+
+.weather_location {
+    /* Location display styling */
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.min_max_temp {
+    /* Min and max temperature display styling */
+    display: flex;
+    margin-top: 10px;
+    font-size: 24px;
+    color: var(--white);
+}
+
+.min_temp, .max_temp {
+    /* Aligning min and max temperatures */
+    flex: 1;
+    text-align: center;
+}
+
+.weather_description {
+    /* Weather description styling */
+    font-size: 24px;
+    color: var(--white);
+    margin: 10px 0;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.forecast_container {
+    /* Container for the forecast items */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.forecast {
+    /* Layout for forecast items */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.forecast_item {
+    /* Individual forecast item styling */
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration);
+}
+
+.forecast_item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--hover-shadow);
+    background-color: var(--highlight-color);
+}
+
+.forecast_date {
+    /* Date display styling in forecast */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.forecast_icon {
+    /* Forecast icon styling */
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.forecast_temp {
+    /* Temperature styling in forecast */
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.forecast_description {
+    /* Description styling in forecast */
+    font-size: 14px;
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.toggle_unit {
+    /* Unit toggle switch styling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.toggle_unit span {
+    color: gray;
+    font-weight: normal;
+    padding: 0 15px; /* Adds space between Celsius and Fahrenheit */
+}
+
+.toggle_unit span.active {
+    color: white;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.switch input {
+    /* Hide the actual checkbox for the switch */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    /* Slider styling for the toggle switch */
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    /* Slider knob styling */
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.data_container {
+    /* Container for weather data elements */
+    margin-top: 30px;
+    color: var(--white);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.element {
+    /* Styling for individual data elements */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.data {
+    /* Data value styling */
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.text {
+    /* Label text styling */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon {
+    /* Icon styling */
+    width: 30px;
+    height: 30px;
+}
+
+.wind_direction {
+    /* Wind direction display styling */
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white);
+    margin-top: 5px;
+}
+
+.wind_rate {
+    /* Wind speed display styling */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.humidity {
+    /* Humidity display styling */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        /* Adjust container size and padding for tablets */
+        width: 90%;
+        padding: 10px;
+    }
+
+    .top_bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top_bar input {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .search_icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .weather_temp {
+        font-size: 80px;
+    }
+
+    .weather_location {
+        font-size: 30px;
+    }
+
+    .min_max_temp {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .forecast {
+        flex-direction: column;
+    }
+
+    .forecast_item {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .data_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .element {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .wind_direction, .humidity, .wind_rate {
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--white);
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        /* Adjust container size and padding for mobile */
+        width: 100%;
+        padding: 5px;
+    }
+
+    .top_bar input {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .search_icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .weather_temp {
+        font-size: 60px;
+    }
+
+    .weather_location {
+        font-size: 24px;
+    }
+
+    .min_max_temp {
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .wind_direction, .humidity, .wind_rate {
+        /* Centering wind direction, humidity, and wind speed */
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--white);
+        margin-top: 5px;
+    }
+
+    .forecast {
+        flex-direction: column;
+    }
+
+    .forecast_item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .data_container {
+        /* Center content for mobile */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .element {
+        /* Align elements to center and provide spacing */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .forecast_icon {
+        width: 25px;
+        height: 25px;
+    }
+}
